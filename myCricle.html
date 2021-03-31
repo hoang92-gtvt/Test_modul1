@@ -10,21 +10,11 @@
 <script>
 
     class MyCricle{
-        constructor(x,y,r) {
+        constructor(x,y,r,_cl) {
             this.posiX=x;
             this.posiY=y;
             this.radius=r;
-            this.color;
-        }
-        getRandomHex(){
-            Math.floor(Math.random() * 255);
-        }
-        getRandomColor(){
-                var red = this.getRandomHex();
-                var green = this.getRandomHex();
-                var blue = this.getRandomHex();
-                this.color= "rgb(" + red + "," + blue + "," + green +")";
-
+            this.color=_cl
         }
 
         render(){
@@ -34,12 +24,12 @@
             ctx1.arc(this.posiX, this.posiY, this.radius, 0, 2 * Math.PI);
             ctx1.fill();
 
-            ctx1.fillStyle="#000000";
+            ctx1.fillStyle= "'"+ this.color+ "'";
 
 
         }
     }
-    let circle1= new MyCricle(10,10, 100);
+    let circle1= new MyCricle(10,10, 100,#000000);
     circle1.render();
 
 
