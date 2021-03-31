@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vẽ hình tròn</title>
+</head>
+<body>
+<canvas  id= 'mycanvas' width="1000px" height="1000px" style="border-width: 1px; solid:#d3d3d3; color: crimson "></canvas>
+
+<script>
+
+    class MyCricle{
+        constructor(x,y,r) {
+            this.posiX=x;
+            this.posiY=y;
+            this.radius=r;
+            this.color;
+        }
+        getRandomHex(){
+            Math.floor(Math.random() * 255);
+        }
+        getRandomColor(){
+                var red = this.getRandomHex();
+                var green = this.getRandomHex();
+                var blue = this.getRandomHex();
+                this.color= "rgb(" + red + "," + blue + "," + green +")";
+
+        }
+
+        render(){
+            let  ctx1=document.getElementById('mycanvas').getContext('2d');
+
+            ctx1.beginPath();
+            ctx1.arc(this.posiX, this.posiY, this.radius, 0, 2 * Math.PI);
+            ctx1.fill();
+
+            ctx1.fillStyle="#000000";
+
+
+        }
+    }
+    let circle1= new MyCricle(10,10, 100);
+    circle1.render();
+
+
+
+
+
+
+</script>
+</body>
+</html>

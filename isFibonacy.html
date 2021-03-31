@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dãy fibonacy</title>
+</head>
+<body>
+
+    <script>
+        function isFibonacy(_number){;
+
+        let arr= [1,1];
+        for (let i = 2; i <_number ; i++) {
+            arr[i]=arr[i-1]+arr[i-2];
+        }
+        console.log(arr);
+        for (let j = 0; j <arr.length ; j++) {
+            if (arr[j]===_number){
+                return alert('Số bạn nhập thuộc dãy fibonacy')
+            }
+            else return alert('Số bạn nhập không thuộc dãy fibonacy')
+        }
+        }
+        let k =parseInt(prompt('Nhập số cần kiểm tra'));
+        isFibonacy(k);
+
+
+    </script>
+
+</body>
+</html>
